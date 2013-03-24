@@ -1,4 +1,5 @@
 #include "MinesweeperFunctions.h"
+#include <stdio.h>
 
 #define ModuleOffset 0xAAA38
 #define StaticPtrOffset 0x18
@@ -77,7 +78,7 @@ BOOL bReadBoard(HANDLE hProc, LPMINESWEEPER_STRUCTURE lpMinesweeperStructure, DW
 			return FALSE;
 		}
 
-		for (unsigned j = 0; j < lpMinesweeperStructure->dwBoardWidth; j++) {
+		for (unsigned j = 0; j < lpMinesweeperStructure->dwBoardHeight; j++) {
 			lpBoard[j][i] = lpCol[j];
 		}
 	}
